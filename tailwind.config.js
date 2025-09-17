@@ -5,8 +5,12 @@ export default {
     extend: {
       keyframes: {
         cloudLoop: {
-          "0%": { transform: "translateX(-20vw)" },
-          "100%": { transform: "translateX(100vw)" },
+          // "0%": { transform: "translateX(-20vw)" },
+          // "100%": { transform: "translateX(100vw)" },
+          // "0%": { left: "2%" },
+          // "100%": { left: "100%" },
+          "0%": { transform: "translateX(calc(-1 * var(--offset)))" },
+          "100%": { transform: "translateX(calc(100vw + var(--offset)))" },
         },
       },
       animation: {

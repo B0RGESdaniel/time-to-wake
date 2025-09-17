@@ -70,7 +70,15 @@ function App() {
         <IoIosCloud
           key={index}
           className={`absolute text-white animate-cloud-loop`}
-          style={{ animationDelay: cloud.delay, top: cloud.position }}
+          style={{
+            animationDelay: cloud.delay,
+            top: cloud.position,
+            ["--offset" as any]: `${cloud.size + 60}px`,
+            ["--cloud-size" as any]: `${cloud.size}px`,
+            transform: `translateX(calc(-1 * var(--offset)))`,
+            fontSize: `${cloud.size}px`,
+            willChange: "transform",
+          }}
           size={cloud.size}
         />
       ))}
