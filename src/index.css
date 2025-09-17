@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@config '../tailwind.config.js';
+
+:root {
+  background-color: #71aff8;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
