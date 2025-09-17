@@ -10,12 +10,12 @@ function App() {
   const [waketime, setWaketime] = useState("07:00");
 
   const clouds = [
-    { position: "1/12", size: 90, delay: "-5s" },
-    { position: "1/5", size: 80, delay: "8s" },
-    { position: "1/3", size: 100, delay: "0s" },
-    { position: "3/6", size: 80, delay: "10s" },
-    { position: "2/3", size: 120, delay: "-10s" },
-    { position: "10/12", size: 70, delay: "2s" },
+    { position: "5%", size: 90, delay: "-5s" },
+    { position: "15%", size: 80, delay: "8s" },
+    { position: "30%", size: 100, delay: "0s" },
+    { position: "40%", size: 80, delay: "10s" },
+    { position: "50%", size: 120, delay: "-10s" },
+    { position: "80%", size: 70, delay: "2s" },
   ];
 
   function calcWakeTimeAndHoursOfSleep() {
@@ -69,13 +69,13 @@ function App() {
       {clouds.map((cloud, index) => (
         <IoIosCloud
           key={index}
-          className={`absolute top-${cloud.position} text-white animate-cloud-loop`}
-          style={{ animationDelay: cloud.delay }}
+          className={`absolute text-white animate-cloud-loop`}
+          style={{ animationDelay: cloud.delay, top: cloud.position }}
           size={cloud.size}
         />
       ))}
       <div className="relative z-10 flex h-full items-center justify-center">
-        <div className="bg-white flex items-center justify-center flex-col px-8 py-6 rounded-2xl gap-6 shadow-2xl">
+        <div className="bg-white flex items-center top- justify-center flex-col px-8 py-6 rounded-2xl gap-6 shadow-2xl">
           <div className="flex flex-col items-center justify-center">
             <div className="flex flex-row gap-2 items-center">
               <IoMdMoon size={27} className="text-blue-900" />
